@@ -1,7 +1,8 @@
 import { signal, effect } from "@preact/signals";
 import PocketBase from "pocketbase";
 
-export const pb = new PocketBase("http://127.0.0.1:8090");
+console.log('using backend: ', import.meta.env.PROD ? 'https://beer.tylergregg.me' :'http://127.0.0.1:8090')
+export const pb = new PocketBase(import.meta.env.PROD ? 'https://beer.tylergregg.me' :'http://127.0.0.1:8090');
 window.pb = pb;
 
 type LoginRecord = {
