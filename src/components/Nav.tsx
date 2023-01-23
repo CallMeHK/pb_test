@@ -43,6 +43,7 @@ export const Nav = () => {
             <ul role="listbox">
               <MenuItem onClick={navigate("/")}>Home</MenuItem>
               <MenuItem onClick={navigate("/todos")}>Todos</MenuItem>
+              <MenuItem onClick={navigate("/chat")}>Chat</MenuItem>
               <MenuItem onClick={signOut}>Sign out</MenuItem>
             </ul>
           </details>
