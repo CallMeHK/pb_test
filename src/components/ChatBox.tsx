@@ -13,7 +13,7 @@ const AlwaysScrollToBottom = () => {
   const elementRef = useRef();
   useEffect(() => elementRef.current.scrollIntoView());
   return <div ref={elementRef} />;
-}
+};
 
 export const ChatBox = ({ user }: { user: UserCollection }) => {
   const query = useMemo(
@@ -38,15 +38,17 @@ export const ChatBox = ({ user }: { user: UserCollection }) => {
   if (loading) return null;
   else
     return (
-      <div
-        style={{
-          overflowY: "auto",
-          maxHeight: "60vh",
-        }}
-      >
-        <ChatMessages />
+      <>
+        <div
+          style={{
+            overflowY: "auto",
+            maxHeight: "60vh",
+          }}
+        >
+          <ChatMessages />
+          <AlwaysScrollToBottom />
+        </div>
         <ChatInput userId={user.id} />
-        <AlwaysScrollToBottom />
-      </div>
+      </>
     );
 };
