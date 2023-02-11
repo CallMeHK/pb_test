@@ -24,7 +24,7 @@ export const ChatInput = ({ userId }: { userId: string }) => {
           type="text"
           id="text"
           name="text"
-          placeholder="Todo"
+          placeholder=""
           value={msg}
           onInput={onInput}
           ref={inputRef}
