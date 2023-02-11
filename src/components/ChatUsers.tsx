@@ -12,12 +12,14 @@ export const ChatUsers = () => {
           <details
             key={user.id}
             open={openUser?.id === user.id}
+          >
+            <summary
             onClick={(e) => {
               e.preventDefault();
+              e.stopPropagation();
               setOpenUser((val) => (val?.id === user.id ? null : user));
             }}
-          >
-            <summary>{user.username}</summary>
+            >{user.username}</summary>
             {openUser?.id === user.id && (
               <ChatBox user={user} />
             )}

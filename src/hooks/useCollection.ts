@@ -3,12 +3,12 @@ import { RecordListQueryParams } from "pocketbase";
 import { useEffect, useMemo, useCallback } from "preact/hooks";
 import { pb, user_data } from "../signals";
 
-type SubscriptionEvent<T> = {
+export type SubscriptionEvent<T> = {
   action: string;
   record: T;
 };
 
-type Subscription<T> = {
+export type Subscription<T> = {
   events: string | "*";
   callback: (event: SubscriptionEvent<T>) => void;
 };
@@ -54,7 +54,7 @@ export const useCollection =
 
     const create = useCallback(
       async (
-        newCollection: Omit<T, "id">,
+        newCollection: Omit<T, "id" | "collectionId" | "collectionName" | 'created' | 'updated'>,
         opts: { update: boolean } = { update: false }
       ) => {
         try {
@@ -74,6 +74,23 @@ export const useCollection =
       },
       []
     );
+
+
+  useEffect(() => {
+    if (!!options?.subscription?.event) {
+      const callback =
+        options?.subscription?.callback ||
+        ((e) => {
+          console.log(`subscription event ${collectionName} recieved: `, e);
+        });
+      console.log(`subscribing to * ${collectionName}`);
+      pb.collection(collectionName).subscribe(options?.subscription?.event, callback);
+      return () => {
+        console.log(`unsubscribing to * ${collectionName}`);
+        pb.collection(collectionName).unsubscribe(options?.subscription?.event);
+      };
+    }
+  }, [options?.subscription?.event, options]);
 
     return {
       data: collection.value,
