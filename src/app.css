@@ -82,3 +82,15 @@ body > footer {
   padding: 1rem 0;
 }
 
+/* Markdown component */
+@media (min-width: 992px) {
+  .md-section {
+    padding: 0 48px
+  }
+}
+
+@media (min-width: 1200px) {
+  .md-section {
+    padding: 0 120px
+  }
+}

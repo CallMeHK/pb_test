@@ -38,9 +38,18 @@ const LazyTodoPage = lazy(() =>
   })
 );
 
+const LazyResumePage = lazy(() =>
+  import('./pages/ResumePage').then((m) => {
+    return {
+      default: m.ResumePage,
+    };
+  })
+);
+
 const SignInPage = () => <Suspense fallback={null}><LazySignInPage/></Suspense>
 const TodoPage = () => <Suspense fallback={null}><LazyTodoPage/></Suspense>
 const ChatPage = () => <Suspense fallback={null}><LazyChatPage/></Suspense>
+const ResumePage = () => <Suspense fallback={null}><LazyResumePage/></Suspense>
 
 
 export const App = () => {
@@ -51,6 +60,7 @@ export const App = () => {
         <Route path="/signin" component={SignInPage} />
         <AuthenticatedRoute path="/todos" component={TodoPage} />
         <AuthenticatedRoute path="/chat" component={ChatPage} />
+        <Route path="/resume" component={ResumePage} />
         <Route path="/" component={HomePage} />
       </Switch>
     </>

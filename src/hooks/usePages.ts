@@ -23,7 +23,9 @@ export type PageCollection = {
   updated: string;
   title: string;
   markdown: string[];
-  expand: MarkdownCollection[];
+  expand: {
+    markdown: MarkdownCollection[];
+  }
 };
 
 export const page_collection = signal<PageCollection[]>([]);
