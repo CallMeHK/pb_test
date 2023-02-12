@@ -1,8 +1,14 @@
 import { useLocation } from "wouter-preact";
-import { logout } from "../signals";
+import { is_authenticated, logout } from "../signals";
 import { useRef } from "preact/hooks";
 
-const MenuItem = ({ children, onClick }: { children: string; onClick: (e?: any) => any }) => (
+const MenuItem = ({
+  children,
+  onClick,
+}: {
+  children: string;
+  onClick: (e?: any) => any;
+}) => (
   <li>
     <a href="#" onClick={onClick}>
       {children}
@@ -30,7 +36,10 @@ export const Nav = () => {
       <ul>
         <li>
           <a href="./" className="contrast" onClick={navigate("/")}>
-            <strong>beer.tylergregg</strong>
+            <img src="./beer-mug-icon.svg" style={{ height: '22px', marginRight: '8px', marginBottom: '5px' }} />
+            <strong>
+              beer.tylergregg
+            </strong>
           </a>
         </li>
       </ul>
@@ -38,13 +47,18 @@ export const Nav = () => {
         <li>
           <details role="list" dir="rtl" ref={dropdownRef}>
             <summary aria-haspopup="listbox" role="link" className="secondary">
+              Menu
+              {/* 
               Apps
+              */}
             </summary>
             <ul role="listbox">
               <MenuItem onClick={navigate("/")}>Home</MenuItem>
-              <MenuItem onClick={navigate("/todos")}>Todos</MenuItem>
-              <MenuItem onClick={navigate("/chat")}>Chat</MenuItem>
-              <MenuItem onClick={signOut}>Sign out</MenuItem>
+              {is_authenticated.value && <MenuItem onClick={navigate("/todos")}>Todos</MenuItem>}
+              {is_authenticated.value && <MenuItem onClick={navigate("/chat")}>Chat</MenuItem>}
+              {is_authenticated.value && <MenuItem onClick={signOut}>Sign out</MenuItem>}
+              {!is_authenticated.value && <MenuItem onClick={navigate("/signin")}>Sign in</MenuItem>}
+              
             </ul>
           </details>
         </li>

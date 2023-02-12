@@ -14,6 +14,7 @@
     "@preact/signals": "^1.1.3",
     "pocketbase": "^0.10.0",
     "preact": "^10.11.3",
+    "preact-markdown": "^2.1.0",
     "wouter-preact": "^2.10.0-alpha.1"
   },
   "devDependencies": {
