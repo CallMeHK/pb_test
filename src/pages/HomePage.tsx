@@ -46,9 +46,10 @@ export const HomePage = () => {
           </picture>
           <MdSection>{intro.md || md.intro}</MdSection>
         </section>
-        <section id="links">
-        <p><Link href="/resume">Resume</Link></p>
-        <p><Link href="/recipes">Gluten free beer recipes</Link></p>
+        <section id="links" className="md-section">
+        <p><Link href="/resume">Resume stuff</Link></p>
+        <p><Link href="/recipes">Gluten free beer stuff</Link></p>
+        <p><Link href="/tech">Tech stuff</Link></p>
          {/*
          <article>
             <h4 style={{margin: 0}}>Resume</h4>

@@ -1,19 +1,8 @@
 import { signal } from "@preact/signals";
 import { useCollection } from "./useCollection";
+import { MarkdownCollection } from './useMarkdwon'
 
 export const PAGE_COLLECTION = "page";
-
-export type MarkdownCollection = {
-  id: string
-  collectionId: string
-  collectionName: "markdown"
-  created: string
-  updated: string
-  md: string // this is markdown
-  name: string
-  tags: string[]
-  expand: {};
-};
 
 export type PageCollection = {
   id: string;

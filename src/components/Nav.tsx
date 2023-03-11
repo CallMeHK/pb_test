@@ -54,6 +54,9 @@ export const Nav = () => {
             </summary>
             <ul role="listbox">
               <MenuItem onClick={navigate("/")}>Home</MenuItem>
+              <MenuItem onClick={navigate("/resume")}>Resume</MenuItem>
+              <MenuItem onClick={navigate("/beer")}>GF Beer</MenuItem>
+              <MenuItem onClick={navigate("/tech")}>Tech</MenuItem>
               {is_authenticated.value && <MenuItem onClick={navigate("/todos")}>Todos</MenuItem>}
               {is_authenticated.value && <MenuItem onClick={navigate("/chat")}>Chat</MenuItem>}
               {is_authenticated.value && <MenuItem onClick={signOut}>Sign out</MenuItem>}
