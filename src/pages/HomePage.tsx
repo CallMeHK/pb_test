@@ -48,7 +48,7 @@ export const HomePage = () => {
         </section>
         <section id="links" className="md-section">
         <p><Link href="/resume">Resume stuff</Link></p>
-        <p><Link href="/recipes">Gluten free beer stuff</Link></p>
+        <p><Link href="/beer">Gluten free beer stuff</Link></p>
         <p><Link href="/tech">Tech stuff</Link></p>
          {/*
          <article>
