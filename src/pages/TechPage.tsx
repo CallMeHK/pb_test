@@ -8,3 +8,7 @@
  * 
  * 
  */
+
+import { ComingSoon } from '../components'
+
+export const TechPage = ComingSoon

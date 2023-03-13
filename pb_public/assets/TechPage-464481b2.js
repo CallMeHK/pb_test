@@ -1,0 +1,1 @@
+import"./wouter-preact-7e50a448.js";import"./index-aa1f9ee7.js";import"./@preact/signals-4e3ecbd2.js";import"./preact-bfe5487e.js";import"./preact-markdown-b1dbf714.js";import{C as o}from"./ComingSoon-4fd66c7d.js";import"./pocketbase-05c1a5be.js";/* empty css                      */const c=o;export{c as TechPage};
