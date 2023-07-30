@@ -54,6 +54,14 @@ const LazyBeerPage = lazy(() =>
   })
 );
 
+const LazyBeerRecipePage = lazy(() =>
+  import('./pages/BeerRecipePage').then((m) => {
+    return {
+      default: m.BeerRecipePage,
+    };
+  })
+);
+
 const LazyTechPage = lazy(() =>
   import('./pages/TechPage').then((m) => {
     return {
@@ -67,6 +75,7 @@ const TodoPage = () => <Suspense fallback={null}><LazyTodoPage/></Suspense>
 const ChatPage = () => <Suspense fallback={null}><LazyChatPage/></Suspense>
 const ResumePage = () => <Suspense fallback={null}><LazyResumePage/></Suspense>
 const BeerPage = () => <Suspense fallback={null}><LazyBeerPage/></Suspense>
+const BeerRecipePage = () => <Suspense fallback={null}><LazyBeerRecipePage/></Suspense>
 const TechPage = () => <Suspense fallback={null}><LazyTechPage/></Suspense>
 
 
@@ -80,6 +89,7 @@ export const App = () => {
         <AuthenticatedRoute path="/chat" component={ChatPage} />
         <Route path="/resume" component={ResumePage} />
         <Route path="/beer" component={BeerPage} />
+        <Route path="/beer/recipe/:name" component={BeerRecipePage} />
         <Route path="/tech" component={TechPage} />
         <Route path="/" component={HomePage} />
       </Switch>

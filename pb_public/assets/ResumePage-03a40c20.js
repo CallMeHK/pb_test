@@ -1,0 +1,1 @@
+import"./wouter-preact-ff762065.js";import{o as m}from"./index-f62242f8.js";import"./@preact/signals-4e3ecbd2.js";import"./preact-markdown-b1dbf714.js";import{M as o}from"./MdPage-3fdfee1a.js";import"./preact-bfe5487e.js";import"./pocketbase-05c1a5be.js";/* empty css                      */const g=()=>m(o,{name:"resume"});export{g as ResumePage};

@@ -1,0 +1,1 @@
+import{o as r,M as i}from"./index-f62242f8.js";import"./preact-bfe5487e.js";import"./wouter-preact-ff762065.js";import"./@preact/signals-4e3ecbd2.js";import"./pocketbase-05c1a5be.js";import"./preact-markdown-b1dbf714.js";/* empty css                      */const c=()=>r("div",{children:r(i,{children:r("h4",{children:"Beer page"})})});export{c as BeerPage};
